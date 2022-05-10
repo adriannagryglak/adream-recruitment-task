@@ -1,0 +1,40 @@
+@import "./index.scss";
+
+.details {
+  padding: 2% 0 0 175px;
+  position: relative;
+
+  .details__container {
+    background-image: url("../assets/details/details-bg.png");
+    background-size: cover;
+    height: 642px;
+    margin-left: 160px;
+    position: relative;
+
+    &::after {
+      content: url("../assets/details/details-decor.png");
+      position: absolute;
+      right: 11%;
+      top: -11%;
+    }
+  }
+
+  .details__title {
+    max-width: 523px;
+    font-size: 65px;
+    position: absolute;
+    top: 38%;
+    margin: 0;
+    padding-bottom: 192px;
+
+    &::before {
+      content: "";
+      width: 610px;
+      height: 20px;
+      background-color: $black;
+      position: absolute;
+      bottom: 0;
+      z-index: 10;
+    }
+  }
+}

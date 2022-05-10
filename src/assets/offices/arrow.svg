@@ -1,0 +1,9 @@
+<svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_3)">
+<path  d="M0 130L130 130L130 0L0 0L0 130Z" fill="white"/>
+<path class="category__container__btn--arrow--blackbg" transform="translate(-130, 0)" d="M0 130L130 130L130 0L0 0L0 130Z" fill="black"/>
+<path className="category__container__btn--arrow--arrow" d="M53 64.769H76.482" stroke="black" stroke-width="3" stroke-linecap="square" stroke-linejoin="round"/>
+<path className="category__container__btn--arrow--arrow" d="M66.801 75.538L77.616 64.769L66.801 54" stroke="black" stroke-width="3" stroke-linecap="square"/>
+</g>
+
+</svg>

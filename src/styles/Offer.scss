@@ -1,0 +1,75 @@
+@import "./index.scss";
+
+.offer {
+  padding: 0 175px 175px 175px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 130px;
+
+  .offer__container {
+    width: 290px;
+    position: relative;
+
+    .offer__title {
+      max-width: 253px;
+      line-height: 58px;
+      padding-bottom: 55px;
+      margin: 5px 0 0 0;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 130px;
+        height: 10px;
+        background-color: $black;
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+    .offer__container__caption {
+      font-size: $font-size-medium;
+      max-height: 128px;
+      line-height: 38px;
+      margin: 0;
+      white-space: pre-line;
+    }
+
+    .offer__container__image-container {
+      height: 277px;
+      width: 290px;
+      position: relative;
+
+      .offer__container__img {
+        position: absolute;
+        bottom: 40px;
+      }
+    }
+  }
+
+  .offer__button {
+    width: 380px;
+    height: 78px;
+    background-image: linear-gradient(to right, $yellow 50%, $black 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+    line-height: 78px;
+    transition: all 0.4s ease;
+    margin-top: 112px;
+
+    &:hover {
+      background-position: left bottom;
+      color: $black;
+      cursor: pointer;
+    }
+  }
+
+  .offer__button--img {
+    float: right;
+  }
+}

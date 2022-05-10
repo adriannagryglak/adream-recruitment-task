@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;700;800&display=swap");
+
+/* variables */
+
+$black: #000000;
+$white: #ffffff;
+$yellow: #ffcc48;
+
+$font-poppins: "Poppins", "sans-serif";
+$font-size-extra-small: 12px;
+$font-size-small: 18px;
+$font-size-medium: 28px;
+$font-size-big: 48px;
+$font-size-large: 65px;
+
+$line-spacing-small: 28px;
+$line-spacing-medium: 38px;
+$line-spacing-big: 72px;
+$line-spacing-large: 75px;
+//there are more line-heights from design (25, 58, 98)
+
+
+/* global styles*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $font-poppins;
+}
+
+h1{
+font-weight: bold;
+font-size: $font-size-large;
+line-height: $line-spacing-large;
+}
+
+h2 {
+  font-family: $font-poppins;
+  font-weight: bold;
+  font-size: $font-size-big;
+  line-height: $line-spacing-big;
+  color: $black;
+}
+
+h3 {
+  font-family: $font-poppins;
+  font-weight: bold;
+  font-size: $font-size-medium;
+  line-height: $line-spacing-medium;
+  color: $black;
+  margin: 0;
+}
+
+button{
+  outline: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-size: $font-size-small;
+}

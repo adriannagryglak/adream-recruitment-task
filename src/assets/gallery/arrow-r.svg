@@ -1,0 +1,11 @@
+<svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_3)">
+<path  d="M0 130L130 130L130 0L0 0L0 130Z" fill="white"/>
+<path class="btn--arrow--blackbg" transform="translate(130, 0)" d="M0 130L130 130L130 0L0 0L0 130Z" fill="black"/>
+<g class="path-arrow" transform="translate(43.891 46)">
+    <path class="d arrow" d="M41.123,0H0" transform="translate(1.986 18.939)"/>
+    <path class="e arrow" d="M18.939,37.879,0,18.939,18.939,0"/>
+</g>
+</g>
+</svg>
+

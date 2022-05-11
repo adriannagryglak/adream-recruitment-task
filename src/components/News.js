@@ -15,7 +15,7 @@ const elements = props.data.map((el, i)=>{
   });
 
   return (
-    <section className="news">
+    <section className={props.sizes.isMedium ? "news ml-auto ps-5 pe-5" : "news"}>
       <h1 className="news__title">Aktualności</h1>
       <div className="news__container">
         {elements}

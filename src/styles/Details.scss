@@ -17,15 +17,19 @@
       right: 11%;
       top: -11%;
     }
+
+    @media (max-width: 768px){
+      background-position: 50% 70%;
+    }
   }
 
   .details__title {
     max-width: 523px;
-    font-size: 65px;
     position: absolute;
     top: 38%;
     margin: 0;
     padding-bottom: 192px;
+    z-index: 10;
 
     &::before {
       content: "";

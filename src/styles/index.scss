@@ -1,3 +1,4 @@
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;700;800&display=swap");
 
 /* variables */
@@ -37,6 +38,10 @@ h1{
 font-weight: bold;
 font-size: $font-size-large;
 line-height: $line-spacing-large;
+
+@media (max-width: 576px){
+  font-size: $font-size-big;
+}
 }
 
 h2 {
@@ -45,6 +50,11 @@ h2 {
   font-size: $font-size-big;
   line-height: $line-spacing-big;
   color: $black;
+
+  @media (max-width: 576px){
+    font-size: 38px;
+  }
+
 }
 
 h3 {
@@ -64,4 +74,6 @@ button{
   margin: 0;
   cursor: pointer;
   font-size: $font-size-small;
+
 }
+

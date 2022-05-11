@@ -6,6 +6,10 @@
   flex-wrap: wrap;
   column-gap: 130px;
 
+  @media (max-width: 1700px){
+    column-gap: 45px;
+  }
+
   .offer__container {
     width: 290px;
     position: relative;

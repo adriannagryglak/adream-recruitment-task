@@ -14,7 +14,10 @@
     flex-wrap: wrap;
     column-gap: 20px;
     row-gap: 50px;
-    justify-content: center;
+
+    @media (max-width: 1918px){
+      justify-content: center;
+    }
 
     .news__article {
       width: 450px;

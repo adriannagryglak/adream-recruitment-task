@@ -20,7 +20,7 @@
   .category__container {
     width: 770px;
     height: 495px;
-    background-size: 100%;
+    background-size: auto 100%;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
@@ -33,7 +33,7 @@
     }
 
     &:hover {
-      background-size: 120%;
+      background-size: auto 120%;
     }
 
     &:hover .category__container__btn--arrow--arrow {
@@ -92,6 +92,11 @@
       right: 0;
       height: 130px;
       overflow: hidden;
+
+      @media (max-width: 576px){
+        transform: scale(0.7);
+        transform-origin: bottom right;
+      }
     }
   }
 
@@ -106,6 +111,7 @@
       max-width: 270px;
     }
   }
+
   .category__container:nth-last-child(2) {
     background-image: url(../assets/offices/offices2.png);
     height: 362px;
@@ -118,6 +124,7 @@
       bottom: 0;
     }
   }
+
   .category__container:nth-last-child(3) {
     background-image: url(../assets/offices/offices3.png);
 

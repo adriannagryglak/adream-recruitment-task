@@ -5,6 +5,7 @@ import Details from "./Details";
 import News from "./News";
 import Gallery from "./Gallery";
 import Footer from "./Footer";
+import { useMediaPredicate } from "react-media-hook";
 import newsImg1 from "../assets/news/news1.jpg";
 import newsImg2 from "../assets/news/news2.jpg";
 import newsImg3 from "../assets/news/news3.png";
@@ -39,15 +40,24 @@ function App() {
   {title: 'Lorem ipsum dolor sit amet, conse lorem ipsum lorem', img: house, alt: 'ikona sieci domowej'},
   {title: 'Lorem ipsum dolor sit amet, conse lorem ipsum', img: people, alt: 'ikona ludzi'},];
 
+  
+  const sizes = {isDesktop: useMediaPredicate("(min-width: 992px)"),
+                 isMedium: useMediaPredicate("(max-width: 768px)"),
+                 isMobile:  useMediaPredicate("(max-width: 576px)")};
+
+  const isDesktop = useMediaPredicate("(min-width: 992px)");
+  const isMedium = useMediaPredicate("(max-width: 768px)");
+  const isMobile = useMediaPredicate("(max-width: 576px)");
+
   return (
     <>
-      <Header />
-      <Offices data={officesData} />
-      <Offer data={offerData}/>
-      <Details />
-      <News data={newsData}/>
-      <Gallery />
-      <Footer />
+      <Header isDesktop={isDesktop} isMedium={isMedium} isMobile={isMobile}/>
+      <Offices data={officesData} isMedium={isMedium} />
+      <Offer data={offerData} sizes={sizes}/>
+      <Details sizes={sizes}/>
+      <News data={newsData} sizes={sizes}/>
+      <Gallery sizes={sizes} />
+      <Footer sizes={sizes}/>
     </>
   );
 }

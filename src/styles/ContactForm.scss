@@ -1,0 +1,131 @@
+@import "./index.scss";
+
+.contact-form {
+  z-index: 10;
+  width: 20%;
+  min-height: 572px;
+  background-color: $white;
+  position: absolute;
+  margin: 0 176px 125px 0;
+  right: 0;
+  bottom: 0;
+  color: $black;
+  padding: 33px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: content-box;
+
+  @media (max-width: 1880px) {
+    margin: 0 175px 50px 0;
+  }
+
+  @media (max-width: 1300px) {
+    margin: 0 70px 50px 0;
+  }
+
+  //cleaning up for bootstrap
+  @media (max-width: 992px) {
+    position: relative;
+    top: 0;
+  }
+
+  .contact-form__title {
+    margin-top: -5px;
+
+    @media (max-width: 576px) {
+      font-size: 24px;
+    }
+  }
+
+  .contact-form__caption {
+    color: grey;
+    margin: 6px 0 12px 0;
+    font-size: $font-size-small;
+  }
+
+  .contact-form__fieldset {
+    border: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    .contact-form__legend {
+      padding: 0;
+      font-weight: 800;
+      font-size: $font-size-small;
+      margin: 0 0 35px 0;
+    }
+
+    .contact-form__input {
+      width: 100%;
+      box-sizing: border-box;
+      height: 52px;
+      margin: 0 0 20px 0;
+      border: 1px solid $black;
+      font-size: $font-size-small;
+      font-family: $font-poppins;
+      padding-left: 20px;
+
+      @media (max-width: 1200px) {
+        font-size: $font-size-extra-small;
+        height: 40px;
+      }
+    }
+
+    //hidden but still accessible for screen readers
+    .contact-form__input--label {
+      border: 0;
+      clip: rect(1px 1px 1px 1px);
+      clip: rect(1px, 1px, 1px, 1px);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    .contact-form__agreements {
+      display: flex;
+
+      .contact-form__agreements--check {
+        -webkit-appearance: none;
+        width: 25px;
+        height: 20px;
+        margin: 0;
+        padding: 0;
+        border: solid 1px $black;
+
+        &:checked {
+          background: $black;
+        }
+      }
+
+      .contact-form__agreements--caption {
+        font-size: 10px;
+        margin: 0 0 25px 15px;
+        line-height: 15px;
+      }
+    }
+
+    .contact-form__submit {
+      width: 100%;
+      color: $white;
+      background-image: linear-gradient(to right, $yellow 50%, $black 50%);
+      background-size: 200% 100%;
+      background-position: right bottom;
+      height: 52px;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 3px;
+      position: relative;
+      transition: all 0.7s ease;
+      padding-top: 5px;
+
+      &:hover {
+        background-position: left bottom;
+        color: $black;
+      }
+    }
+  }
+}

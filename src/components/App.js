@@ -45,14 +45,10 @@ function App() {
                  isMedium: useMediaPredicate("(max-width: 768px)"),
                  isMobile:  useMediaPredicate("(max-width: 576px)")};
 
-  const isDesktop = useMediaPredicate("(min-width: 992px)");
-  const isMedium = useMediaPredicate("(max-width: 768px)");
-  const isMobile = useMediaPredicate("(max-width: 576px)");
-
   return (
     <>
-      <Header isDesktop={isDesktop} isMedium={isMedium} isMobile={isMobile}/>
-      <Offices data={officesData} isMedium={isMedium} />
+      <Header sizes={sizes}/>
+      <Offices data={officesData} sizes={sizes} />
       <Offer data={offerData} sizes={sizes}/>
       <Details sizes={sizes}/>
       <News data={newsData} sizes={sizes}/>

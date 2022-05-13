@@ -1,0 +1,118 @@
+@import "./index.scss";
+
+.navigation {
+    display: flex;
+    width: 100%;
+
+    .navigation__logo {
+      margin: 42px 0 30px 0;
+      z-index: 10;
+    }
+
+    .navigation__hamburger{
+       position: absolute;
+
+       button{
+        transform: scale(1.2);
+       }
+
+       .navbar-collapse{
+         z-index: 100;
+         background: rgba( 0, 0, 0, 0.15 );
+         backdrop-filter: blur( 12px );
+         -webkit-backdrop-filter: blur( 12px );
+         border-radius: 10px;
+         padding: 10px;
+         font-size: 20px;
+         text-transform: uppercase;
+         font-weight: 400;
+         margin-top: 10px;
+
+         .navigation__menu__link--a{
+           color: white;
+           padding: 10px;
+         }
+      }
+    }
+
+    .navigation__menu {
+      list-style: none;
+      display: flex;
+      z-index: 10;
+      margin: 64px 0 0 182px;
+      padding: 0;
+      height: 40px;
+      flex-grow: 1;
+
+      //to ensure pixel perfect with design at 1920px moment
+      @media (min-width: 1925px) {
+        width: 90%;
+        justify-content: space-between;
+      }
+
+      @media (max-width: 1918px) {
+        justify-content: space-between;
+        margin-left: 50px;
+      }
+
+      .navigation__menu--link {
+        padding: 0 108px 0 0;
+        cursor: pointer;
+
+        .navigation__menu__link--a {
+          text-decoration: none;
+          color: inherit;
+          position: relative;
+          padding-bottom: 13.5px;
+
+          &::after {
+            content: "";
+            position: absolute;
+            opacity: 0;
+            height: 100%;
+            width: 100%;
+            border-bottom: solid 1px $white;
+            transform: scaleX(0);
+            transition: all 0.5s ease;
+            transform-origin: 50% 50%;
+            left: 0;
+            top: 0;
+          }
+
+          &:hover::after {
+            transform: scaleX(1);
+            opacity: 1;
+          }
+        }
+      }
+
+      .navigation__menu--link:first-child,
+      .navigation__menu--link:nth-child(2) {
+        padding: 0 58px 0 0;
+        position: relative;
+      }
+
+      .navigation__menu--link--icons {
+        padding: 0 0 0 277px;
+        margin: 0;
+        display: flex;
+
+        .navigation__menu--icon {
+          background-color: $white;
+          color: $black;
+          padding: 5px;
+          margin-left: 10px;
+          box-sizing: content-box;
+        }
+      }
+
+      @media (max-width: 1918px) {
+        .navigation__menu--link,
+        .navigation__menu--link:first-child,
+        .navigation__menu--link:nth-child(2),
+        .navigation__menu--link--icons {
+          padding: 0 20px;
+        }
+      }
+    }
+  }

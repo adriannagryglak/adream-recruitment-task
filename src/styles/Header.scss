@@ -32,131 +32,6 @@
     background-color: rgba($color: $black, $alpha: 0.27);
   }
 
-  .navigation {
-    display: flex;
-    width: 100%;
-
-    .navigation__logo {
-      margin: 42px 0 30px 0;
-      z-index: 10;
-    }
-
-    .navigation__hamburger{
-       position: absolute;
-
-       button{
-        transform: scale(1.2);
-       }
-
-       .navbar-collapse{
-         z-index: 100;
-         background: rgba( 0, 0, 0, 0.15 );
-         backdrop-filter: blur( 12px );
-         -webkit-backdrop-filter: blur( 12px );
-         border-radius: 10px;
-         padding: 10px;
-         font-size: 20px;
-         text-transform: uppercase;
-         font-weight: 400;
-         margin-top: 10px;
-
-         .navigation__menu__link--a{
-           color: white;
-           padding: 10px;
-         }
-      }
-    }
-
-    .navigation__menu {
-      list-style: none;
-      display: flex;
-      z-index: 10;
-      margin: 64px 0 0 182px;
-      padding: 0;
-      height: 40px;
-      flex-grow: 1;
-
-      //to ensure pixel perfect with design at 1920px moment
-      @media (min-width: 1925px) {
-        width: 90%;
-        justify-content: space-between;
-      }
-
-      @media (max-width: 1918px) {
-        //width: 90%;
-        
-        justify-content: space-between;
-        margin-left: 50px;
-      }
-
-      //cleaning-up for the bootstrap
-      @media (max-width: 992px) {
-        //margin: 0;
-        //width: 100%;
-      }
-
-      .navigation__menu--link {
-        padding: 0 108px 0 0;
-        cursor: pointer;
-
-        .navigation__menu__link--a {
-          text-decoration: none;
-          color: inherit;
-          position: relative;
-          padding-bottom: 13.5px;
-
-          &::after {
-            content: "";
-            position: absolute;
-            opacity: 0;
-            height: 100%;
-            width: 100%;
-            border-bottom: solid 1px $white;
-            transform: scaleX(0);
-            transition: all 0.5s ease;
-            transform-origin: 50% 50%;
-            left: 0;
-            top: 0;
-          }
-
-          &:hover::after {
-            transform: scaleX(1);
-            opacity: 1;
-          }
-        }
-      }
-
-      .navigation__menu--link:first-child,
-      .navigation__menu--link:nth-child(2) {
-        padding: 0 58px 0 0;
-        position: relative;
-      }
-
-      .navigation__menu--link--icons {
-        padding: 0 0 0 277px;
-        margin: 0;
-        display: flex;
-
-        .navigation__menu--icon {
-          background-color: $white;
-          color: $black;
-          padding: 5px;
-          margin-left: 10px;
-          box-sizing: content-box;
-        }
-      }
-
-      @media (max-width: 1918px) {
-        .navigation__menu--link,
-        .navigation__menu--link:first-child,
-        .navigation__menu--link:nth-child(2),
-        .navigation__menu--link--icons {
-          padding: 0 20px;
-        }
-      }
-    }
-  }
-
   .website-header__title {
     z-index: 10;
     position: absolute;
@@ -168,7 +43,7 @@
       top: 300px;
     }
 
-    //cleaning up for booty
+    //cleaning up for bootstrap
     @media (max-width: 992px) {
       position: relative;
       top: 0;
@@ -194,7 +69,7 @@
       width: 500px;
     }
 
-    @media (max-width: 576px){
+    @media (max-width: 576px) {
       font-size: $font-size-medium;
       line-height: $line-spacing-medium;
     }
@@ -206,194 +81,69 @@
     }
   }
 
-  .contact-form {
-    z-index: 10;
-    width: 20%;
-    min-height: 572px;
-    background-color: $white;
+  .slider-nav {
     position: absolute;
-    margin: 0 176px 125px 0;
-    right: 0;
     bottom: 0;
-    color: $black;
-    padding: 33px;
+    left: 0;
+    height: 118px;
     display: flex;
-    flex-direction: column;
-    box-sizing: content-box;
-
-    @media (max-width: 1880px) {
-      margin: 0 175px 50px 0;
+    align-items: center;
+  
+    .slider-nav__btn {
+      height: 118px;
+      transition: all 0.7s ease;
+  
+      &:hover .c {
+        fill: $black;
+        opacity: 1;
+        transition: all 0.5s ease;
+        transform: translate(0, 823px);
+      }
+  
+      &:hover .c--r {
+        fill: $black;
+        opacity: 1;
+        transition: all 0.5s ease;
+        transform: translate(160px, 823px);
+      }
+  
+      &:hover .d,
+      :hover .e {
+        stroke: $white;
+        transition: all 0.5s ease;
+      }
+    }
+  
+    .slider-nav__marker {
+      width: 290px;
+      height: 19px;
+      margin: 0 0 0 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      font-size: $font-size-small;
+  
     }
 
-    @media (max-width: 1300px) {
-      margin: 0 70px 50px 0;
+    .slider-nav__progress-bar {
+      background-color: black;
+      
+      .progress-bar{
+        background-color: white;
+        transition: width 3s linear;
+      }
+
     }
 
     //cleaning up for bootstrap
     @media (max-width: 992px) {
-      position: relative;
-      top: 0;
-    }
-
-    .contact-form__title {
-      margin-top: -5px;
-
-      @media (max-width: 576px){
-        font-size: 24px;
-      }
-    }
-
-    .contact-form__caption {
-      color: grey;
-      margin: 6px 0 12px 0;
-      font-size: $font-size-small;
-    }
-
-    .contact-form__fieldset {
-      border: none;
-      width: 100%;
-      padding: 0;
-      margin: 0;
-
-      .contact-form__legend {
-        padding: 0;
-        font-weight: 800;
-        font-size: $font-size-small;
-        margin: 0 0 35px 0;
-      }
-
-      .contact-form__input {
-        width: 100%;
-        box-sizing: border-box;
-        height: 52px;
-        margin: 0 0 20px 0;
-        border: 1px solid $black;
-        font-size: $font-size-small;
-        font-family: $font-poppins;
-        padding-left: 20px;
-
-        @media (max-width: 1200px) {
-          font-size: $font-size-extra-small;
-          height: 40px;
-        }
-      }
-
-      //hidden but still accessible for screen readers
-      .contact-form__input--label {
-        border: 0;
-        clip: rect(1px 1px 1px 1px);
-        clip: rect(1px, 1px, 1px, 1px);
-        height: 1px;
-        margin: -1px;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 1px;
-      }
-
-      .contact-form__agreements {
-        display: flex;
-
-        .contact-form__agreements--check {
-          -webkit-appearance: none;
-          width: 25px;
-          height: 20px;
-          margin: 0;
-          padding: 0;
-          border: solid 1px $black;
-
-          &:checked {
-            background: $black;
-          }
-        }
-
-        .contact-form__agreements--caption {
-          font-size: 10px;
-          margin: 0 0 25px 15px;
-          line-height: 15px;
-        }
-      }
-
-      .contact-form__submit {
-        width: 100%;
-        color: $white;
-        background-image: linear-gradient(to right, $yellow 50%, $black 50%);
-        background-size: 200% 100%;
-        background-position: right bottom;
-        height: 52px;
-        text-transform: uppercase;
-        font-weight: bold;
-        letter-spacing: 3px;
-        position: relative;
-        transition: all 0.7s ease;
-        padding-top: 5px;
-
-        &:hover {
-          background-position: left bottom;
-          color: $black;
-        }
+      .contact-form,
+      .website-header__title,
+      .website-header__caption {
+        position: unset;
       }
     }
   }
 }
 
-.slider-nav {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 118px;
-  display: flex;
-  align-items: center;
-
-  .slider-nav__btn {
-    height: 118px;
-    transition: all 0.7s ease;
-
-    &:hover .c {
-      fill: $black;
-      opacity: 1;
-      transition: all 0.5s ease;
-      transform: translate(0, 823px);
-    }
-
-    &:hover .c--r {
-      fill: $black;
-      opacity: 1;
-      transition: all 0.5s ease;
-      transform: translate(160px, 823px);
-    }
-
-    &:hover .d,
-    :hover .e {
-      stroke: $white;
-      transition: all 0.5s ease;
-    }
-  }
-
-  .slider-nav__marker {
-    width: 290px;
-    height: 19px;
-    margin: 0 0 0 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-    font-size: $font-size-small;
-
-    .slider-nav__marker--stripe {
-      height: 6px;
-      width: 70%;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.5s ease;
-    }
-  }
-  //cleaning up for booty
-  @media (max-width: 992px) {
-    .contact-form,
-    .website-header__title,
-    .website-header__caption {
-      position: unset;
-    }
-  }
-}

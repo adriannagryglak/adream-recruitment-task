@@ -8,10 +8,8 @@ import img4 from '../assets/gallery/gallery4.png';
 import img5 from '../assets/gallery/gallery5.png';
 import img6 from '../assets/gallery/gallery6.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import "swiper/css/free-mode";
 import { FreeMode } from "swiper";
-
 
 export default function Gallery(props) {
 
@@ -32,12 +30,9 @@ export default function Gallery(props) {
       [setWindowWidth]
     );
 
-    console.log(windowWidth);
-
     function handleClick(side){
     setIsLeft(side === 'right' ? false : true);
     }
-
 
 
     const galleryContainer = (<div className='gallery__container' 
@@ -67,10 +62,13 @@ export default function Gallery(props) {
     const galleryContainerWidth = 2721;
     const slidesFraction = Math.round( (windowWidth/galleryContainerWidth)* 10) / 10;
     
+    //issue to fix- swiper doesn't stop at the end of slide in free mode, goes way to far
+    //width of slide is set to wide I can't overide it.
+
     return (
         <section className="gallery" id="gallery_section">
-            {props.sizes.isMedium ? <Swiper slidesPerView={slidesFraction} spaceBetween={0} freeMode={true} modules={[FreeMode]}>
-                                        <SwiperSlide>{galleryContainer}</SwiperSlide>
+            {props.sizes.isMedium ? <Swiper slidesPerView={slidesFraction} freeMode={true} modules={[FreeMode]}>
+                                        <SwiperSlide style={{width: '2721px'}}>{galleryContainer}</SwiperSlide>
                                     </Swiper> : 
                 <>
                     {galleryContainer}

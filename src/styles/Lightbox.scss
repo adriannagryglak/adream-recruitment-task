@@ -1,0 +1,21 @@
+@import './index.scss';
+
+.gallery__lightbox{
+    background-color: rgba($black, 0.7);
+    backdrop-filter: blur(2px);
+    z-index: 100;
+
+    .gallery__lightbox__image{
+        max-height: 85%;
+        max-width: 85%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .gallery__lightbox__close--icon path{
+        stroke: $white;
+        cursor: pointer;
+    }
+}

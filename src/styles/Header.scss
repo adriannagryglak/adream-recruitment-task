@@ -88,32 +88,32 @@
     height: 118px;
     display: flex;
     align-items: center;
-  
+
     .slider-nav__btn {
       height: 118px;
       transition: all 0.7s ease;
-  
+
       &:hover .c {
         fill: $black;
         opacity: 1;
         transition: all 0.5s ease;
         transform: translate(0, 823px);
       }
-  
+
       &:hover .c--r {
         fill: $black;
         opacity: 1;
         transition: all 0.5s ease;
         transform: translate(160px, 823px);
       }
-  
+
       &:hover .d,
       :hover .e {
         stroke: $white;
         transition: all 0.5s ease;
       }
     }
-  
+
     .slider-nav__marker {
       width: 290px;
       height: 19px;
@@ -123,17 +123,72 @@
       align-items: center;
       font-weight: bold;
       font-size: $font-size-small;
-  
+
+      .slider-nav__marker--stripe {
+        height: 6px;
+        width: 70%;
+        position: relative;
+        overflow: hidden;
+        transition: all 1s linear;
+        background-color: $black;
+
+        //styling for optional animated stripe, should be more universal, needs improvement
+        &::after {
+          position: absolute;
+          content: "";
+          height: 100%;
+          transition: all 1s linear;
+          background-color: $white;
+        }
+
+        &.first::after {
+          animation: first 3s linear forwards;
+        }
+
+        &.second::after {
+          animation: second 3s linear forwards;
+        }
+
+        &.third::after {
+          animation: third 3s linear forwards;
+        }
+
+        @keyframes first {
+          from {
+            width: 0;
+          }
+          to {
+            width: 33.33%;
+          }
+        }
+
+        @keyframes second {
+          from {
+            width: 33.33%;
+          }
+          to {
+            width: 66.66%;
+          }
+        }
+
+        @keyframes third {
+          from {
+            width: 66.66%;
+          }
+          to {
+            width: 100%;
+          }
+        }
+      }
     }
 
     .slider-nav__progress-bar {
       background-color: black;
-      
-      .progress-bar{
+
+      .progress-bar {
         background-color: white;
         transition: width 3s linear;
       }
-
     }
 
     //cleaning up for bootstrap
@@ -146,4 +201,3 @@
     }
   }
 }
-

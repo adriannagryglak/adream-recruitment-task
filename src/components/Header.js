@@ -7,7 +7,7 @@ import bgImg2 from '../assets/header/bg-img-2.png';
 import bgImg3 from '../assets/header/bg-img-3.png';
 import Navigation from './Navigation.js';
 import ContactForm from './ContactForm.js';
-import { ProgressBar } from 'react-bootstrap';
+// import { ProgressBar } from 'react-bootstrap';
 
 export default function Header({sizes}) {
 
@@ -37,9 +37,12 @@ export default function Header({sizes}) {
     }
 
     let slideCurrent = images.length > 9 ? images.indexOf(bgImg)+1 : `0${images.indexOf(bgImg)+1}`
-    let slideLast = images.length > 9 ? images.length : `0${images.length}`;  
+    let slideLast = images.length > 9 ? images.length : `0${images.length}`;
 
-  return (
+    // another way, of animating (less visually-intuitive) slider nav stripe (instead of ProgressBar) but with less code and none imprefect styling commented below 
+     let animateClass = images.indexOf(bgImg) === 0 ? 'first' : images.indexOf(bgImg) === 1 ? 'second' : 'third';
+    
+    return (
         <header className="website-header" id="main_section" style={{backgroundImage: `url(${bgImg})`}}>
             <Navigation sizes={sizes}/> 
             <h1 className={sizes.isDesktop ? "website-header__title" : "website-header__title mt-5 mb-5"}>Firma</h1>
@@ -47,12 +50,12 @@ export default function Header({sizes}) {
             <ContactForm sizes={sizes}/>
 
              <div className={sizes.isMedium ? "slider-nav col-12 justify-content-between" : "slider-nav"}>
-                <button className="slider-nav__btn" onClick={prevSlide}><BtnArrowL /></button>
-                <button className="slider-nav__btn" onClick={nextSlide}><BtnArrowR /></button>
+                <button className="slider-nav__btn" onClick={prevSlide} alt="poprzednie zdjęcie w tle"><BtnArrowL /></button>
+                <button className="slider-nav__btn" onClick={nextSlide} alt="następne zdjęcie w tle"><BtnArrowR /></button>
                 { !sizes.isMedium && <div className='slider-nav__marker' >
                     <span className='slider-nav__marker--current'>{slideCurrent}</span>
-                     {/*progress bar could restart to min value after reaching end, for cleaner animation*/}
-                    <ProgressBar className="slider-nav__progress-bar" now={images.indexOf(bgImg)} max={2} min={-1} label={`indicator to background change, every 3 seconds`} visuallyHidden style={{width: "70%", height: "6px", borderRadius: "0"}}></ProgressBar>
+                    {/* <ProgressBar className="slider-nav__progress-bar" now={images.indexOf(bgImg)} max={2} min={-1} label={`indicator to background change, every 3 seconds`} visuallyHidden style={{width: "70%", height: "6px", borderRadius: "0"}}></ProgressBar> */}
+                    <div className={`slider-nav__marker--stripe ${animateClass}`}></div>
                     <span className='slider-nav__marker--last'>{slideLast}</span>
                 </div>}
             </div>

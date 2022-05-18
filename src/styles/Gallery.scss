@@ -5,6 +5,10 @@
   position: relative;
   height: 888px;
 
+  @media (max-width: 576px) {
+    overflow-x: scroll;
+  }
+
   .gallery__container {
     position: absolute;
     transition: all 0.5s ease;
@@ -81,7 +85,7 @@
   }
 
   .gallery__button {
-    height: 130px;
+    z-index: 10000;
 
     &:hover .arrow {
       stroke: $white;
@@ -101,6 +105,10 @@
     top: 50%;
     right: 0;
     transform: translate(-15px, -50%) scaleX(-1);
+
+    @media (max-width: 576px) {
+      transform: translate(15px, -50%) scaleX(-1) scale(0.5);
+    }
   }
 
   .gallery__button--l {
@@ -108,6 +116,10 @@
     top: 50%;
     left: 0;
     transform: translate(15px, -50%);
+
+    @media (max-width: 576px) {
+      transform: translate(-15px, -50%) scale(0.5);
+    }
   }
 
   .swiper-wrapper div.swiper-slide{

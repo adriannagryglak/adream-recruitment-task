@@ -1,4 +1,18 @@
-# Getting Started with Create React App
+# Recruitment task no 1 
+
+Website mock-up, coded almost pixel perfect to designsheet (1920px wide).
+.than made responsive with help of boostrap 
+.than added lightbox effect (gallery) and two versions of animated slider (website header)
+
+Finally deployed [HERE](https://a-dream-job-recruitment.netlify.app) 
+
+Still work in progress !
+
+For some reason (maybe because of webpack v5 no longer automatically pollyfiling, many packages seems not be working in this project. Tried fiew solutions to fix it, but with no succes for now.
+
+If you encounter autoprefixer warnings, preventing from build, before "npm start" run:
+
+### `npm preinstall`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

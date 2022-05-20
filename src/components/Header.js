@@ -48,7 +48,6 @@ export default function Header({sizes}) {
             <h1 className={sizes.isDesktop ? "website-header__title" : "website-header__title mt-5 mb-5"}>Firma</h1>
             <p className='website-header__caption w-75'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor</p>
             <ContactForm sizes={sizes}/>
-
              <div className={sizes.isMedium ? "slider-nav col-12 justify-content-between" : "slider-nav"}>
                 <button className="slider-nav__btn" onClick={prevSlide} alt="poprzednie zdjęcie w tle"><BtnArrowL /></button>
                 <button className="slider-nav__btn" onClick={nextSlide} alt="następne zdjęcie w tle"><BtnArrowR /></button>

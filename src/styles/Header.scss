@@ -132,7 +132,6 @@
         transition: all 1s linear;
         background-color: $black;
 
-        //styling for optional animated stripe, should be more universal, needs improvement
         &::after {
           position: absolute;
           content: "";
@@ -141,6 +140,7 @@
           background-color: $white;
         }
 
+        //for every background imsge there is a coded class and keyframe- very unefficient and needs improvement
         &.first::after {
           animation: first 3s linear forwards;
         }

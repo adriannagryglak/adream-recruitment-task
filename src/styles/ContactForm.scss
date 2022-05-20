@@ -15,6 +15,12 @@
   flex-direction: column;
   box-sizing: content-box;
 
+  &.loading {
+    :not(:last-child) {
+      filter: blur(2px);
+    }
+  }
+
   @media (max-width: 1880px) {
     margin: 0 175px 50px 0;
   }
@@ -95,10 +101,6 @@
         margin: 0;
         padding: 0;
         border: solid 1px $black;
-
-        &:checked {
-          background: $black;
-        }
       }
 
       .contact-form__agreements--caption {
@@ -125,6 +127,25 @@
       &:hover {
         background-position: left bottom;
         color: $black;
+      }
+
+      &.loading::after {
+        content: "";
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border-bottom: 1px solid $black;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: spin 2s infinite;
+      }
+
+      @keyframes spin {
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
       }
     }
   }

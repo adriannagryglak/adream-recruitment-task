@@ -1,10 +1,5 @@
+import React, { Suspense } from 'react';
 import Header from "./Header";
-import Offices from "./Offices";
-import Offer from "./Offer";
-import Details from "./Details";
-import News from "./News";
-import Gallery from "./Gallery";
-import Footer from "./Footer";
 import { useMediaPredicate } from "react-media-hook";
 import newsImg1 from "../assets/news/news1.jpg";
 import newsImg2 from "../assets/news/news2.jpg";
@@ -17,6 +12,12 @@ import desk from "../assets/offer/desk.png";
 import house from "../assets/offer/house.png";
 import people from "../assets/offer/people.png";
 
+const Offices = React.lazy(()=> import('./Offices'));
+const Offer = React.lazy(()=> import('./Offer'));
+const Details = React.lazy(()=> import('./Details'));
+const News = React.lazy(()=> import('./News'));
+const Gallery = React.lazy(()=> import('./Gallery'));
+const Footer = React.lazy(()=> import('./Footer'));
 
 function App() {
 
@@ -48,12 +49,14 @@ function App() {
   return (
     <>
       <Header sizes={sizes}/>
-      <Offices data={officesData} sizes={sizes} />
-      <Offer data={offerData} sizes={sizes}/>
-      <Details sizes={sizes}/>
-      <News data={newsData} sizes={sizes}/>
-      <Gallery sizes={sizes} />
-      <Footer sizes={sizes}/>
+      <Suspense fallback={<div>Wczytywanie...</div>}>
+        <Offices data={officesData} sizes={sizes} />
+        <Offer data={offerData} sizes={sizes}/>
+        <Details sizes={sizes}/>
+        <News data={newsData} sizes={sizes}/>
+        <Gallery sizes={sizes} />
+        <Footer sizes={sizes}/>
+      </Suspense>
     </>
   );
 }

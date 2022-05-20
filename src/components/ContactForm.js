@@ -7,7 +7,6 @@ export default function ContactForm({sizes}){
     const [formErrors, setFormErrors] = useState({});
     const [isSend, setIsSend] = useState(false);
     const [btn, setBtn] = useState(null);
-    const [test, setTest] = useState(null);
 
     function handleChange(event){
         const {name, value, type, checked} = event.target;

@@ -38,34 +38,37 @@ export default function ContactForm({sizes}){
         }
       }
 
-    async function postForm(data){
-        const payload = JSON.stringify({
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
-          message: data.message,
-        });
-
-        try {
-            let response = await fetch("http://127.0.0.1/wordpress//wp-json/contact-form-7/v1/contact-forms/6/feedback", {
-              method: "POST",
-              headers: {'content-type': "multipart/form-data"},
-              body: jsonToFormData(payload),
-            });
-            
-            if (response.status === 200) {
-              setFormData({name: "", email: "", phone: "", message: "", agreements: false});
-              setBtn("succes");
-            } else {
-              setBtn("failure");
-            }
-          } catch (err) {
-            console.log(err);
-            setBtn("failure");
-          }
-    }
-
     useEffect(()=>{
+
+        async function postForm(data){
+            const payload = JSON.stringify({
+              name: data.name,
+              email: data.email,
+              phone: data.phone,
+              message: data.message,
+            });
+    
+            //CONNECTING TO WP CONTACT FORM - ada-app-test.com , try axios maybe
+            try {
+                let response = await fetch("http://ada-app-test.com/wp-json/contact-form-7/v1/contact-forms/5/feedback", {
+                  mode: 'no-cors',
+                  method: "POST",
+                  headers: {'content-type': "multipart/form-data"},
+                  body: jsonToFormData(payload),
+                });
+                
+                if (response.status === 200) {
+                  setFormData({name: "", email: "", phone: "", message: "", agreements: false});
+                  setBtn("succes");
+                } else {
+                  setBtn("failure");
+                }
+              } catch (err) {
+                console.log(err);
+                setBtn("failure");
+              }
+        }
+
         if(Object.keys(formErrors).length === 0 && isSend){
             postForm(formData);
             setBtn("loading");

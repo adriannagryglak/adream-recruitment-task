@@ -1,7 +1,14 @@
 import "../styles/Offices.scss";
 import { ReactComponent as Arrow } from "../assets/offices/arrow.svg";
 
-export default function Offices({sizes, data}) {
+export default function Offices({sizes}) {
+
+  const data = [
+    { title: "Biuro", price: "od 1000 zł/msc" },
+    { title: "Lorem ipsum", price: "od 500 zł/msc" },
+    { title: "Biuro lorem", price: "od 100 zł/h" },
+    { title: "Biuro lorem ipsum Lorem", price: "od 100 zł/h" },
+  ];
 
   const elements = data.map((el, i) => {
     return (

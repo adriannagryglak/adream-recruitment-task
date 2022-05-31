@@ -2,11 +2,13 @@
 
 Website mock-up, coded almost pixel perfect to designsheet (1920px wide).
 .than made responsive with help of boostrap 
-.than added lightbox effect (gallery) and two versions of animated slider (website header)
+.than added lightbox effect (gallery) and two versions of animated slider (website header) 
 
 Finally deployed [HERE](https://a-dream-job-recruitment.netlify.app) 
 
 Still work in progress !
+Submitting form via Wordpress unfortunately not working despite response status 200,
+Getting posts from Wordpress works, but not perfectly- only after clicking links.
 
 For some reason (maybe because of webpack v5 no longer automatically pollyfiling, many packages seems not be working in this project. Tried fiew solutions to fix it, but with no succes for now.
 

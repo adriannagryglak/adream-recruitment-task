@@ -1,0 +1,35 @@
+@import "./index.scss";
+
+.article {
+  h2 {
+    font-size: $font-size-medium;
+    @media (min-width: 576px) {
+      font-size: $font-size-big;
+      margin: 4rem 0;
+    }
+  }
+
+  img {
+    max-height: 30vh;
+    width: auto;
+    margin-bottom: 2rem;
+    margin-right: 3rem;
+    float: left;
+  }
+
+  p {
+    font-size: $font-size-small;
+  }
+
+  .article__title {
+    background-color: $yellow;
+  }
+
+  .article__details {
+    font-size: $font-size-extra-small;
+
+    @media (min-width: 576px) {
+      font-size: $font-size-small;
+    }
+  }
+}

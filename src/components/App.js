@@ -1,6 +1,10 @@
 import React, { Suspense } from "react";
 import Header from "./Header";
 import { useMediaPredicate } from "react-media-hook";
+import Article from "./Article";
+import { Route, Routes } from "react-router-dom";
+import ScrollToTop from "./ScrollToTop";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 const Offices = React.lazy(() => import("./Offices"));
 const Offer = React.lazy(() => import("./Offer"));
@@ -17,17 +21,29 @@ function App() {
   };
 
   return (
-    <>
-      <Header sizes={sizes} />
-      <Suspense fallback={<div>Wczytywanie...</div>}>
-        <Offices sizes={sizes} />
-        <Offer sizes={sizes} />
-        <Details sizes={sizes} />
-        <News sizes={sizes} />
-        <Gallery sizes={sizes} />
-        <Footer sizes={sizes} />
-      </Suspense>
-    </>
+    <ScrollToTop>
+      <Routes>
+        <Route path="/:id" element={<Article />} />
+        <Route
+          index
+          element={
+            <>
+              <Header sizes={sizes} />
+              <Suspense fallback={<div>Wczytywanie...</div>}>
+                <Offices sizes={sizes} />
+                <Offer sizes={sizes} />
+                <Details sizes={sizes} />
+                <LazyLoadComponent>
+                  <News sizes={sizes} />
+                </LazyLoadComponent>
+                <Gallery sizes={sizes} />
+                <Footer sizes={sizes} />
+              </Suspense>
+            </>
+          }
+        />
+      </Routes>
+    </ScrollToTop>
   );
 }
 
